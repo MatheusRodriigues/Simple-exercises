@@ -4,8 +4,11 @@ print("-------------------")
 
 nStudents = int(input("Enter the number of students: "))
 
-# Collecting data from each student
-def store_and_calculate():
+listStudents = []
+
+# Collecting data from each student and creating general list of students
+while nStudents != 0:
+
     infoStudent = []
     name = input("Student's name: ")
     note1 = float(input("First note: "))
@@ -25,21 +28,13 @@ def store_and_calculate():
     infoStudent.append(lowestGradeS)
     infoStudent.append(highestGradeS)
 
-
-    return infoStudent
-
-listStudents = []
-
-# Creating general list of students
-while nStudents != 0:
-
-    listStudents.append(list(store_and_calculate()))
+    listStudents.append(list(infoStudent))
 
     nStudents -= 1
 
 generalAverage = 0
 highestGrade = 0
-lowestGrade = 100
+lowestGrade = 1000
 
 # Printing information for each student
 for student in listStudents:
